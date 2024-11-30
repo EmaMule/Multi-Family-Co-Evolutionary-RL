@@ -1,0 +1,4 @@
+jax
+tensorflow==2.*
+numpy
+pettingzoo[classic]
