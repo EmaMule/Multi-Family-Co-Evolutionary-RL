@@ -2,3 +2,5 @@ jax
 tensorflow==2.*
 numpy
 pettingzoo==1.24.3
+gymnasium>=1.*
+pettingzoo[classic]
