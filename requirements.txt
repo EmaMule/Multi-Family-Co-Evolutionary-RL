@@ -1,6 +1,4 @@
-jax
-tensorflow==2.*
-numpy
+torch 
+numpy 
 pettingzoo==1.24.3
-gymnasium
 pettingzoo[classic]
