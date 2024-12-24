@@ -61,14 +61,14 @@ def main():
                                  args.use_softmax, args.hof_size, args.dummy_size, args.dummy_decay_freq,
                                  args.n_elites, args.initial_std_dev, args.min_std_dev, args.std_dev_decay,
                                  args.dissimilarity_weight, args.plot_eval_times, args.plot_eval_freq,
-                                 args.plot_eval_window, args.use_action_mask)
+                                 args.plot_eval_window, args.use_action_mask, args.plot_path, args.video_folder)
     
     elif args.training_type == 'evolutionary':
         trainer = EvolutionTrainer(args.env_type, args.population_size, args.n_generations,
                                    args.use_softmax, args.hof_size, args.dummy_size, args.dummy_decay_freq,
                                    args.initial_std_dev, args.min_std_dev, args.std_dev_decay,
                                    args.dissimilarity_weight, args.learning_rate, args.plot_eval_times,
-                                   args.plot_eval_freq, args.plot_eval_window, args.use_action_mask)
+                                   args.plot_eval_freq, args.plot_eval_window, args.use_action_mask, args.plot_path, args.video_folder)
     #train 
     trainer.train()
 
