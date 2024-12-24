@@ -11,13 +11,13 @@ class EvolutionTrainer(Trainer):
     def __init__(self, env_type, population_size, n_generations,
                  use_softmax, hof_size, dummy_size, dummy_decay_freq, initial_std_dev, min_std_dev,
                  std_dev_decay, dissimilarity_weight, learning_rate, plot_eval_times,
-                 plot_eval_freq, plot_eval_window, use_action_mask):
+                 plot_eval_freq, plot_eval_window, use_action_mask, plot_path, video_folder):
 
         super().__init__(env_type, population_size, n_generations,
                          use_softmax, hof_size, dummy_size, dummy_decay_freq, initial_std_dev,
                          min_std_dev, std_dev_decay, dissimilarity_weight,
                          plot_eval_times, plot_eval_freq, plot_eval_window,
-                         use_action_mask)
+                         use_action_mask, plot_path, video_folder)
 
         self.learning_rate = learning_rate
 
