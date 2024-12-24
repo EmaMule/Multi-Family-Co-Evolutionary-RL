@@ -14,7 +14,7 @@ class Trainer(ABC):
     def __init__(self, env_type, population_size, n_generations,
                  use_softmax, hof_size, dummy_size, dummy_decay_freq, initial_std_dev, min_std_dev,
                  std_dev_decay, dissimilarity_weight, plot_eval_times, plot_eval_freq,
-                 plot_eval_window, use_action_mask):
+                 plot_eval_window, use_action_mask, plot_path, video_folder):
 
         # environment parameters
         if env_type == 'tictactoe_v3':
@@ -63,10 +63,10 @@ class Trainer(ABC):
         self.plot_eval_window = plot_eval_window
         self.plot_eval_times = plot_eval_times
         self.plot_eval_freq = plot_eval_freq
-        self.plot_path = "/content/reward_plot_episode.png"
+        self.plot_path = plot_path
 
         # video parameters
-        self.video_folder = "/content/videos"
+        self.video_folder = video_folder
 
         # initialize variables
         self.dummy_size = self.init_dummy_size
