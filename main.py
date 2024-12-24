@@ -1,6 +1,7 @@
 from evolutionary_trainer import EvolutionTrainer
 from genetic_trainer import GeneticTrainer
 import argparse
+import logging
 
 def main():
     parser = argparse.ArgumentParser(description="Select a type of training to conduct")
@@ -79,4 +80,7 @@ def main():
     trainer.save_winner("./winner.pkl")
 
 if __name__ == "__main__":
+    logging.getLogger("pettingzoo").setLevel(logging.ERROR)
+    logging.getLogger("imageio_ffmpeg").setLevel(logging.ERROR)
+
     main()
