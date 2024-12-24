@@ -6,7 +6,7 @@ def main():
     parser = argparse.ArgumentParser(description="Select a type of training to conduct")
 
     # Add a subparser for the two types of training
-    subparsers = parser.add_subparsers(dest="training_type", required=True, help="Type of training to perform", type=str, choice = ['genetic', 'evolutionary'])
+    subparsers = parser.add_subparsers(dest="training_type", required=True, help="Type of training to perform")
 
     # Evolutionary trainer arguments
     evo_parser = subparsers.add_parser('evolutionary', help="Train using evolutionary strategy")
@@ -14,7 +14,7 @@ def main():
     gen_parser = subparsers.add_parser('genetic', help="Train using genetic algorithm")
 
     # Add arguments for evolutionary trainer
-    evo_parser.add_argument("--env_type", type=str, help="Type of environment to train on", default='tic_tac_toev3', choices = ['tic_tac_toev3', 'connect_four_v3', 'texas_holdem_no_limit_v6'])
+    evo_parser.add_argument("--env_type", type=str, help="Type of environment to train on", default='tictactoe_v3', choices = ['tictactoe_v3', 'connect_four_v3', 'texas_holdem_no_limit_v6'])
     evo_parser.add_argument("--population_size", type=int, help="Size of the population", default=200)
     evo_parser.add_argument("--n_generations", type=int, help="Number of generations", default=300)
     evo_parser.add_argument("--use_softmax", type=bool, help="Whether to use softmax", default=False)
@@ -30,10 +30,12 @@ def main():
     evo_parser.add_argument("--plot_eval_freq", type=int, help="Frequency of plotting", default = 10)
     evo_parser.add_argument("--plot_eval_window", type=int, help="Window size for plotting", default = 20)
     evo_parser.add_argument("--use_action_mask", type=bool, help="Whether to use action mask", default = True)
+    evo_parser.add_argument("--plot_path", type=str, help="Path to save plots", default = "/content/reward_plot_episode.png")
+    evo_parser.add_argument("--video_folder", type=str, help="Folder to save videos", default = "/content/videos")
 
     # Add arguments for genetic trainer
-
-    gen_parser.add_argument("--env_type", type=str, help="Type of environment to train on", default = 'tic_tac_toev3', choices = ['tic_tac_toev3', 'connect_four_v3', 'texas_holdem_no_limit_v6'])
+    
+    gen_parser.add_argument("--env_type", type=str, help="Type of environment to train on", default = 'tictactoe_v3', choices = ['tictactoe_v3', 'connect_four_v3', 'texas_holdem_no_limit_v6'])
     gen_parser.add_argument("--population_size", type=int, help="Size of the population", default = 200)
     gen_parser.add_argument("--n_generations", type=int, help="Number of generations", default = 300)
     gen_parser.add_argument("--use_softmax", type=bool, help="Whether to use softmax", default = False)
@@ -49,6 +51,8 @@ def main():
     gen_parser.add_argument("--plot_eval_freq", type=int, help="Frequency of plotting", default = 10)
     gen_parser.add_argument("--plot_eval_window", type=int, help="Window size for plotting", default = 20)
     gen_parser.add_argument("--use_action_mask", type=bool, help="Whether to use action mask", default = True)
+    gen_parser.add_argument("--plot_path", type=str, help="Path to save plots", default = "/content/reward_plot_episode.png")
+    gen_parser.add_argument("--video_folder", type=str, help="Folder to save videos", default = "/content/videos")
 
     args = parser.parse_args()
 

@@ -23,6 +23,8 @@ class Trainer(ABC):
             self.env_type = connect_four_v3
         elif env_type == 'texas_holdem_no_limit_v6':
             self.env_type = texas_holdem_no_limit_v6
+        else:
+            raise ValueError("Invalid environment type. Choose from 'tictactoe_v3', 'connect_four_v3', 'texas_holdem_no_limit_v6'")
 
         self.render_mode = 'rgb_array' # rendering mode
 
