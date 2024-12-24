@@ -1,26 +1,30 @@
 from pettingzoo.classic import tictactoe_v3, connect_four_v3, texas_holdem_no_limit_v6
 import imageio
 from tqdm import tqdm
-from collections import deque
-
+import numpy as np
+import torch
+from agents import DummyAgent
 import matplotlib.pyplot as plt
 from IPython.display import clear_output
-
 from abc import ABC, abstractmethod
 
+# abstract class for the trainers
 class Trainer(ABC):
 
-    def __init__(self, env_type, render_mode, population_size, n_generations,
+    def __init__(self, env_type, population_size, n_generations,
                  use_softmax, hof_size, dummy_size, dummy_decay_freq, initial_std_dev, min_std_dev,
                  std_dev_decay, dissimilarity_weight, plot_eval_times, plot_eval_freq,
                  plot_eval_window, use_action_mask):
 
-        assert env_type in [tictactoe_v3, connect_four_v3, texas_holdem_no_limit_v6]
-        assert render_mode in ["rgb_array", "human"]
-
         # environment parameters
-        self.env_type = env_type
-        self.render_mode = render_mode
+        if env_type == 'tictactoe_v3':
+            self.env_type = tictactoe_v3
+        elif env_type == 'connect_four_v3':
+            self.env_type = connect_four_v3
+        elif env_type == 'texas_holdem_no_limit_v6':
+            self.env_type = texas_holdem_no_limit_v6
+
+        self.render_mode = 'rgb_array' # rendering mode
 
         # training parameters
         self.use_softmax = use_softmax
@@ -303,3 +307,6 @@ class Trainer(ABC):
         with imageio.get_writer(path, fps=1) as writer:
             for frame in frames:
                 writer.append_data(np.array(frame))
+
+    def save_winner (self, filename):
+        torch.save(self.winner.save(), filename)

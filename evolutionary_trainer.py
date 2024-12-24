@@ -4,14 +4,16 @@ from collections import deque
 from copy import deepcopy
 from utils import cosine_similarity
 import numpy as np
+
+# EvolutionTrainer inherits from Trainer
 class EvolutionTrainer(Trainer):
 
-    def __init__(self, env_type, render_mode, population_size, n_generations,
+    def __init__(self, env_type, population_size, n_generations,
                  use_softmax, hof_size, dummy_size, dummy_decay_freq, initial_std_dev, min_std_dev,
                  std_dev_decay, dissimilarity_weight, learning_rate, plot_eval_times,
                  plot_eval_freq, plot_eval_window, use_action_mask):
 
-        super().__init__(env_type, render_mode, population_size, n_generations,
+        super().__init__(env_type, population_size, n_generations,
                          use_softmax, hof_size, dummy_size, dummy_decay_freq, initial_std_dev,
                          min_std_dev, std_dev_decay, dissimilarity_weight,
                          plot_eval_times, plot_eval_freq, plot_eval_window,

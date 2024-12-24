@@ -1,16 +1,15 @@
 import torch
 from torch import nn
 import numpy as np
-from networks import *
+from networks import ClassicNet, DeepNet, Connect4Net #imported in case they are used
 
-NETWORK_TYPE = ClassicNet #change!
 class NeuroAgentClassic:
 
-    def __init__(self, input_shape, n_actions, use_softmax, mode = 'training'):
+    def __init__(self, input_shape, n_actions, use_softmax, mode = 'training', network_type = ClassicNet):
         assert mode in ['training', 'evaluating', 'deployng']
         self.input_shape = input_shape
         self.n_actions = n_actions
-        self.model = NETWORK_TYPE(input_shape, n_actions)
+        self.model = network_type(input_shape, n_actions)
         self.use_softmax = use_softmax
         self.mode = mode
 
@@ -80,7 +79,7 @@ class NeuroAgentClassic:
             # choose action
             if self.mode == 'training' and self.use_softmax:
                 chosen_action = torch.multinomial(masked_probs, 1).item()
-            elif self.mode == 'training' and not self.use_softmax:
+            elif self.mode == 'training' and not self.use_softmax: #we can use also "else"
                 chosen_action = torch.argmax(masked_probs).item()
             elif self.mode == 'evaluating':
                 chosen_action = torch.argmax(masked_probs).item()
