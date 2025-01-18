@@ -8,11 +8,11 @@ class ClassicNet(nn.Module):
     def __init__(self, input_shape = [3,3,2], n_actions = 9, bias = True):
         super(ClassicNet, self).__init__()
         if len(input_shape) == 1: # observation space is a vector
-            self.fc1 = nn.Linear(input_shape[0], 512, bias=bias)
+            self.fc1 = nn.Linear(input_shape[0], 256, bias=bias)
         else:
-            self.fc1 = nn.Linear(2 * input_shape[0] * input_shape[1], 512, bias = bias)
+            self.fc1 = nn.Linear(2 * input_shape[0] * input_shape[1], 256, bias = bias)
 
-        self.fc2 = nn.Linear(512, 32, bias=bias)
+        self.fc2 = nn.Linear(256, 32, bias=bias)
         self.fc3 = nn.Linear(32, n_actions, bias=True) #always false
 
         # trying with 64 and 32 instead of 128 and 64
