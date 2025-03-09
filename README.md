@@ -1,6 +1,6 @@
 # A Multi-Family Co-Evolutionary Approach for Multi-Agent Reinforcement Learning
 
-Project developed for the Reiforcement Learning course for AI and Robotics master's degree in Sapienza University of Rome.
+Project developed for the course of "Reiforcement Learning" during the MSc in Artificial Intelligence and Robotics at Sapienza University of Rome, A.Y. 2024-2025.
 
 ## Evolutive Multi-Family Strategies (EMS)
 ![plot](./figures/ems.png)
