@@ -35,7 +35,7 @@ Alternatively you can use the provided notebook.ipynb by loading it on google co
 
 # Acknowledgement
 
-The games considered are multi-agent environments from PettingZoo's classic environments: https://pettingzoo.farama.org/environments/classic/
+The games considered are multi-agent environments from [PettingZoo's classic environments](https://pettingzoo.farama.org/environments/classic/)
 
-The inspiration for the work comes from Daan Klijn and A.E. Eiben. 2021. “A coevolutionary approach to deep multi-agent reinforcement learning”. (https://arxiv.org/pdf/2104.05610)
+The inspiration for the work comes from [Daan Klijn and A.E. Eiben. 2021. A coevolutionary approach to deep multi-agent reinforcement learning](https://arxiv.org/pdf/2104.05610). 
 
