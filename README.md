@@ -3,20 +3,33 @@
 Project developed for the course of "Reiforcement Learning" during the MSc in Artificial Intelligence and Robotics at Sapienza University of Rome, A.Y. 2024-2025.
 
 ## Evolutive Multi-Family Strategies (EMS)
-![plot](./figures/ems.png)
+<p align="center">
+  <img src="./figures/ems.png" alt="First Approach" width="800"/>
+</p>
 
 ## Genetic Multi-Family Algorithm (GMA)
-![plot](./figures/gma.png)
+<p align="center">
+  <img src="./figures/gma.png" alt="First Approach" width="800"/>
+</p>
 
 ## How to run
-- Clone this repository 
-    - ```git clone https://github.com/EmaMule/RLProject.git```
-- Install the requirements
-    - ```pip install -r requirements.txt```
-- For executing the first algorithm (EMS) use the following command:
-    - ```!python ./main.py EMS```
-- For executing the second algorithm (GMA) use the following command:
-    - ```!python ./main.py GMA```
+
+1. Clone this repository 
+    ```bash
+    git clone https://github.com/EmaMule/RLProject.git
+    ```
+2. Install the requirements
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. For executing the first algorithm (EMS) use the following command:
+   ```bash
+   python ./main.py EMS
+   ```
+4. For executing the second algorithm (GMA) use the following command:
+   ```bash
+   python ./main.py GMA
+   ```
 
 Alternatively you can use the provided notebook.ipynb by loading it on google colab or kaggle environments.
 
